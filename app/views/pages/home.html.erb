@@ -1,7 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 <% if user_signed_in? %>
 <div class="btn btn btn-outline-primary" ><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete} %></div>
 <% else %>
 <div class="btn btn-outline-primary"><%= link_to "Log in", new_user_session_path %></div>
 <% end %>
+<h1>Current listing:</h1>
+<%= link_to "Add a listing", class: "btn btn-primary" %>
+<div class="listing">
+  <% @caravans.each do |caravan| %>
+    <div class="box">
+       <div><%= link_to caravan.model, caravan_path(caravan) %></div>
+       <% if caravan.photo.key %>
+          <%= link_to caravan_path(caravan) do %>
+            <%= cl_image_tag caravan.photo.key, height: 300, width: 400, crop: :fill %>
+            <%= link_to "Remove this listing", lists_path(list), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+          <% end %>
+       <% end %>
+   </div>
+  <% end %>
+</div>
