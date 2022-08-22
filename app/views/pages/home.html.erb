@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%# <h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p> %>
+
+<h1>Current listing:</h1>
+<%= link_to "Add a listing", class: "btn btn-primary" %>
+
+<div class="listing">
+  <% @lists.each do |list| %>
+    <div class="box">
+       <div><%= link_to list.name, list_path(list) %></div>
+       <% if list.photo.key %>
+          <%= link_to list_path(list) do %>
+            <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+            <%= link_to "Remove this list", lists_path(list), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+          <% end %>
+       <% end %>
+   </div>
+  <% end %>
+</div>
