@@ -1,7 +1,12 @@
 class CaravansController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @caravans = Caravan.all
+  end
+  
+  def show
+    @caravan = Caravan.find(params[:id])
   end
 
   def new
@@ -13,19 +18,15 @@ class CaravansController < ApplicationController
     @caravan.save
     redirect_to caravans_path
   end
-
-  def show
-    @caravan = Caravan.find(params[:id])
+  
+  def edit
+    @caravan =  Caravan.find(params[:id])
   end
-
+  
   def update
     @caravan =  Caravan.find(params[:id])
     @caravan.update(caravan_params)
     redirect_to caravans_path
-  end
-
-  def edit
-    @caravan =  Caravan.find(params[:id])
   end
 
   def destroy

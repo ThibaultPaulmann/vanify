@@ -1,0 +1,37 @@
+.caravans-show {
+  width: 1120px;
+  padding: 20px 80px;
+  margin: 0 auto 30px auto;
+  background-color: lightblue;
+
+  .show-images-container {
+    width: 100%;
+    height: 500px;
+    background-color: grey;
+    border-radius: 20px;
+  }
+
+  .show-info-container {
+    margin: 40px 0;
+  }
+
+  .info-header {
+    // padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid grey;
+  }
+
+  .info-body {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .booking-card {
+    margin-left: 10px;
+    width: 400px;
+    min-width: 400px;
+    background-color: grey;
+    border-radius: 20px;
+  }
+}
