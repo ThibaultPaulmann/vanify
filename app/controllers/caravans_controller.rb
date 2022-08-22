@@ -37,7 +37,7 @@ class CaravansController < ApplicationController
   private
 
   def caravan_params
-    params.require(:caravan).permit(:name, :photo)
+    params.require(:caravan).permit(:model, :photo)
   end
 
 end
