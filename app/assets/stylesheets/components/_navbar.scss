@@ -12,13 +12,18 @@
 }
 
 .nav-item {
-  margin-right: 5px;
+  margin-right: 40px;
 }
 
 #logo-text {
   position: absolute;
-  left: 75px;
+  left: 80px;
+  text-shadow:  0.5px 0.5px #e49999;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
+.nav-item-dropdown {
+ border-radius: 50%;
 }
 
 // IN CASE THIBAULT DOES NOT LIKE BOOTSTRAP
