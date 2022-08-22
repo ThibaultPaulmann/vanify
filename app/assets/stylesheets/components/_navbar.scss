@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #f3f3f1;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,3 +10,30 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.nav-item {
+  margin-right: 5px;
+}
+
+#logo-text {
+  position: absolute;
+  left: 75px;
+
+}
+
+// IN CASE THIBAULT DOES NOT LIKE BOOTSTRAP
+// .nav-link {
+//   background-color: #008CBA;
+//   border: none;
+//   border-radius: 5%;
+//   color: white;
+//   padding: 15px 32px;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   font-size: 16px;
+// }
+
+// .nav-item {
+//   color: white;
+// }

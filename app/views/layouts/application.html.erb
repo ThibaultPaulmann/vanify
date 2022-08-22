@@ -10,8 +10,9 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body>
+  <%= render "shared/navbar" %>
     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p clas s="alert"><%= alert %></p>
     <% if user_signed_in? %>
       <div class="btn btn-outline-primary"> <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: {turbo_method: :delete} %> </div>
     <% else %>
