@@ -17,11 +17,46 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   div {
-    margin: 20px;
+    margin: 10px;
   }
 }
 
 .container {
   margin: 0 auto;
   width: 100%;
+}
+.box {
+  background-color: #f3f3f1;
+  width: 300px;
+  height: 400px;
+  // overflow: hidden;
+}
+
+.a {
+  text-decoration: none;
+  color: black;
+}
+
+.photo-img {
+  background-position-x: -130px;
+  height: 300px;
+  width: 93%;
+  background-size: cover;
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right p {
+  text-align: end;
+}
+
+.right h5 {
+  font-weight: lighter;
+}
+
+.naming p {
+  font-weight: 100;
 }
