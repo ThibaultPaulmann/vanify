@@ -30,6 +30,7 @@
   width: 300px;
   height: 400px;
   // overflow: hidden;
+  border-radius: 12px;
 }
 
 .a {
@@ -38,10 +39,11 @@
 }
 
 .photo-img {
-  background-position-x: -130px;
+  // background-position-x: -130px;
   height: 300px;
   width: 93%;
   background-size: cover;
+  border-radius: 10px;
 }
 
 .description {
