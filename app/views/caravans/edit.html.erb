@@ -1,5 +1,5 @@
-<%= link_to "Back", caravans_path, class: "btn btn-primary back-btn" %>
+<%= link_to "Back", caravan_path, class: "btn btn-primary back-btn" %>
 <%= simple_form_for(@caravan) do |f| %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Submit picture", class: "btn btn-primary" %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 <% end %>
