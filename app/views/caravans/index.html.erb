@@ -1,21 +1,21 @@
 <div class="caravans-index">
   <div class="bar">
     <h1>Current listing:</h1>
-    <%= link_to "Add a listing", new_caravan_path , class: "btn btn-primary" %>
+    <%= link_to "Add a listing", new_caravan_path , class: "btn btn-danger" %>
   </div>
   <div class="container">
     <div class="listing">
       <% @caravans.each do |caravan| %>
+
         <div class="box">
-
-          <%# <% if caravan.picture_url %>
-            <%# <%= link_to caravan_path(caravan) do %>
-              <%# <%= cl_image_tag caravan.picture_url, height: 300, width: 400, crop: :fill %>
-              <%# <%= link_to "Remove this listing", caravans_path(caravan), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
-            <%# <% end %>
-          <%# <% end %>
-          <div class="photo-img" style="background-image: url('https://www.corriere.it/methode_image/2021/08/22/Tecnologia/Foto%20Tecnologia/dembell-luxury-motorhome-land-yacht.jpg')"></div>
-
+          <% if caravan.photos.attached? %>
+            <%= link_to caravan_path(caravan) do %>
+              <% caravan.photos.each do |photo| %>
+                <div class="photo-img" style="background-image: url('<%= cl_image_path photo.key, crop: :fill %>')"></div>
+            <% end %>
+          <% end %>
+        <% end %>
+          <%# <img src=<%= caravan.picture_url %>
           <div class="description">
             <div class="naming">
               <h4><%= link_to caravan.model, caravan_path(caravan), class: "a" %></h4>
