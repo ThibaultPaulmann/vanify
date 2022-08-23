@@ -10,6 +10,7 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  filter: hue-rotate(180deg) saturate(40%);
 }
 
 .nav-item {
@@ -17,13 +18,13 @@
 }
 
 #logo-text {
-  text-shadow:  0.5px 0.5px #e49999;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 40px
+  text-shadow: 0.5px 0.5px #e49999;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 40px;
 }
 
 .nav-item-dropdown {
- border-radius: 50%;
+  border-radius: 50%;
 }
 
 #logo-text {
@@ -36,7 +37,7 @@
 }
 
 .nav-link-button {
-text-decoration: none;
-color: #29323d;
-font-weight: bolder;
+  text-decoration: none;
+  color: #29323d;
+  font-weight: bolder;
 }

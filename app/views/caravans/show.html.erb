@@ -26,15 +26,12 @@
     </div>
     <div class="info-body">
       <div>
-        <p><%= @caravan.description %><%= @caravan.description %><%= @caravan.description %><%= @caravan.description %><%= @caravan.description %>
+        <p>Year: <%= @caravan.year.nil? ? "N/A" : @caravan.year %> </p>
+        <p>Fuel type: <%= @caravan.fuelType.nil? ? "N/A" : @caravan.fuelType %></p>
+        <p> Description: <%= @caravan.description %><%= @caravan.description %><%= @caravan.description %><%= @caravan.description %><%= @caravan.description %>
         </p>
       </div>
-      <div class="booking-card">
-      </div>
-    </div>
-    <div>
-      <p>Year: <%= @caravan.year.nil? ? "N/A" : @caravan.year %> </p>
-      <p>Fuel type: <%= @caravan.fuelType.nil? ? "N/A" : @caravan.fuelType %></p>
+      <%= render "components/booking_card" %>
     </div>
   </div>
 </div>
