@@ -15,16 +15,19 @@ class CaravansController < ApplicationController
 
   def create
     @caravan = Caravan.new(caravan_params)
-    @caravan.save
-    redirect_to caravans_path(@caravan)
+    if @caravan.save
+      redirect_to caravan_path(@caravan)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
-    @caravan =  Caravan.find(params[:id])
+    @caravan = Caravan.find(params[:id])
   end
 
   def update
-    @caravan =  Caravan.find(params[:id])
+    @caravan = Caravan.find(params[:id])
     @caravan.update(caravan_params)
     redirect_to caravans_path
   end
@@ -40,5 +43,4 @@ class CaravansController < ApplicationController
   def caravan_params
     params.require(:caravan).permit(:model, :location, :price, :capacity, :year, :fuelType, :picture_url, :description, photos: [])
   end
-
 end
