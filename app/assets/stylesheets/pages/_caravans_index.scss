@@ -29,10 +29,7 @@
   background-color: #f3f3f1;
   width: 300px;
   height: 400px;
-  overflow: hidden;
-  .naming {
-    text-align: center;
-  }
+  // overflow: hidden;
 }
 
 .a {
@@ -45,4 +42,21 @@
   height: 300px;
   width: 93%;
   background-size: cover;
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right p {
+  text-align: end;
+}
+
+.right h5 {
+  font-weight: lighter;
+}
+
+.naming p {
+  font-weight: 100;
 }

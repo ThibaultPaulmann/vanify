@@ -18,7 +18,13 @@
 
           <div class="description">
             <div class="naming">
-              <h6><%= link_to caravan.model, caravan_path(caravan), class: "a" %></h6>
+              <h4><%= link_to caravan.model, caravan_path(caravan), class: "a" %></h4>
+              <p><%= caravan.location %></p>
+             </div>
+
+             <div class="right">
+                <h5>€ <%= caravan.price.to_i %></h5>
+                <p><i class="fa-solid fa-user"></i> <%= caravan.capacity %></p>
              </div>
 
           </div>
