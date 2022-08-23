@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $background-color;
-  border-bottom: 0.1rem solid #567882;
+  border-bottom: 0.1rem solid white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -33,4 +33,10 @@
 .logo-text-nav {
   display: flex;
   margin-left: 78px;
+}
+
+.nav-link-button {
+text-decoration: none;
+color: #29323d;
+font-weight: bolder;
 }
