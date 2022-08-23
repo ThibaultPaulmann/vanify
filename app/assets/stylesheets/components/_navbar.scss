@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #f3f3f1;
+  background: $background-color;
+  border-bottom: 0.1rem solid #567882;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,7 +13,7 @@
 }
 
 .nav-item {
-  margin-right: 70px;
+  margin-right: 78px;
 }
 
 #logo-text {
@@ -24,8 +25,6 @@
 .nav-item-dropdown {
  border-radius: 50%;
 }
-
-
 
 #logo-text {
   margin-left: 10px;
