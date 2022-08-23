@@ -1,4 +1,10 @@
 .caravans-show {
+  h1,
+  h2,
+  h3 {
+    font-family: $headers-font;
+  }
+
   width: 1120px;
   padding: 20px 80px;
   margin: 0 auto 30px auto;
