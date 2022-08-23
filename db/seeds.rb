@@ -12,6 +12,7 @@ emails.each do |email|
   user = User.new
   user.email = email
   user.password = email
+  user.username = Faker::Internet.username
   p user.save
 end
 
@@ -24,6 +25,7 @@ end
   caravan.price = Faker::Number.number(digits: 3)
   caravan.fuelType = Caravan::FUEL_TYPES.sample
   caravan.year = rand(1980..2022)
+  caravan.description = Faker::Lorem.paragraph
   p caravan.save
 end
 
