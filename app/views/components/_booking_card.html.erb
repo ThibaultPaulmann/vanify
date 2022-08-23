@@ -1,6 +1,6 @@
 <div id="booking-card">
   <h2 class="price">€ <%= @caravan.price %> / day </h2>
-  <%= simple_form_for @booking do |f| %>
+  <%= simple_form_for(@booking) do |f| %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
   <% end %>

@@ -6,8 +6,10 @@ class CaravansController < ApplicationController
   end
   
   def show
-    @booking = Booking.new
     @caravan = Caravan.find(params[:id])
+    @booking = Booking.new
+    @booking.user = current_user
+    @booking.caravan = @caravan
   end
 
   def new
