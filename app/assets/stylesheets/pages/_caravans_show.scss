@@ -31,12 +31,14 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 
   .booking-card {
     margin-left: 10px;
     width: 400px;
     min-width: 400px;
+    height: 400px;
     background-color: grey;
     border-radius: 20px;
   }
