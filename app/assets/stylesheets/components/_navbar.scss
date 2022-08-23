@@ -1,9 +1,16 @@
+
+
 .navbar-lewagon {
   justify-content: space-between;
   background: $background-color;
   border-bottom: 0.1rem solid white;
-}
 
+}
+.navbar-container {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -12,7 +19,6 @@
   width: 40px;
   filter: hue-rotate(180deg) saturate(40%);
 }
-
 .nav-item {
   margin-right: 78px;
 }
