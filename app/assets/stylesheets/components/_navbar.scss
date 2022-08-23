@@ -1,9 +1,16 @@
+
+
 .navbar-lewagon {
   justify-content: space-between;
   background: $background-color;
   border-bottom: 0.1rem solid white;
-}
 
+}
+.navbar-container {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -11,7 +18,6 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
-
 .nav-item {
   margin-right: 78px;
 }
