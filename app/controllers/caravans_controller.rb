@@ -14,9 +14,9 @@ class CaravansController < ApplicationController
   end
 
   def create
-    @caravan = Caravan.new(carvan_params)
+    @caravan = Caravan.new(caravan_params)
     @caravan.save
-    redirect_to caravans_path
+    redirect_to caravans_path(@caravan)
   end
 
   def edit
@@ -38,7 +38,7 @@ class CaravansController < ApplicationController
   private
 
   def caravan_params
-    params.require(:caravan).permit(:model, photos: [])
+    params.require(:caravan).permit(:model, :location, :price, :capacity, :year, :fuelType, :picture_url, :description, photos: [])
   end
 
 end
