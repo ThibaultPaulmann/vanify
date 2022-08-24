@@ -1,0 +1,16 @@
+#booking-card {
+  margin-left: 10px;
+  width: 350px;
+  min-width: 350px;
+  height: 400px;
+  padding: 20px;
+  color: $background-color;
+  border: $main-buttons-color;
+  background-color: $main-buttons-color;
+  box-shadow: 3px 3px 10px $header-color;
+  border-radius: 20px;
+
+  h2 {
+    color: $background-color;
+  }
+}
