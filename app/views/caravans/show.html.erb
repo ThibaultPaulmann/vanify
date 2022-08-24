@@ -13,11 +13,10 @@
 
   <div class="show-images-container">
     <% if @caravan.photos.attached? %>
-      <% @caravans.each do |caravan|  %>
         <% @caravan.photos.each do |photo| %>
-       <p>  hello </p>
-       <%# <%= <div class="photo-img" style="background-image: url('<%= cl_image_path photo.key, crop: :fill')"></div>  %>
-       <% end  %>
+        <div class="photo-img" style="background-image: url('<%= cl_image_path photo.key, crop: :fill%>')"></div>
+             <%# <%= <div class="photo-img" style="background-image: url('<%= cl_image_path photo.key, crop: :fill')"></div>  %
+     <% end %>
      <% end %>
   <% end %>
 </div>
