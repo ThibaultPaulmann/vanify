@@ -1,3 +1,32 @@
 <h1>Your Booking</h1>
 
 <%= @booking.caravan.model %>
+<br>
+<br>
+
+<%= @booking.caravan.location %>
+
+<br>
+<br>
+
+<%= @booking.start_date.strftime("%A, %b %d") %>
+
+<br>
+<br>
+
+<%= @booking.end_date.strftime("%A, %b %d") %>
+
+<br>
+<br>
+
+<h6><%= @booking.caravan.price.to_i %>$/ day</h6>
+
+<br>
+
+<h6>Fuel Type: <%= @booking.caravan.fuelType.capitalize %></h6>
+
+<br>
+
+
+
+<h6>Total: $ <%= (@booking.caravan.price * (@booking.end_date - @booking.start_date)).to_i %></h6>
