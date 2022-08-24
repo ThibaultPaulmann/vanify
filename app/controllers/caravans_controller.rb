@@ -39,7 +39,7 @@ class CaravansController < ApplicationController
   def destroy
     @caravan = Caravan.find(params[:id])
     @caravan.destroy
-    redirect_to caravans_path
+    redirect_to user_listings_path
   end
 
   def user_listings
