@@ -1,4 +1,4 @@
-<%= link_to (@caravan.picture_url&.attached?)  ?  "Change picture" : "Add picture", edit_caravan_path(@caravan), class: "btn btn-primary" %>
+<%= link_to (@caravan.picture_url&.empty?)  ?  "Add picture" : "Change picture", edit_caravan_path(@caravan), class: "btn btn-primary" %>
 
 <div class="caravans-show">
   <h1><%= @caravan.model %></h1>
