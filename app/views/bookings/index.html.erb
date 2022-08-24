@@ -1,1 +1,12 @@
-<h1>Your bookings:</h1>
+<div class="container">
+  <h1>Your bookings:</h1>
+
+  <% @bookings.each do |booking| %>
+    <div class="booking-box">
+      <h5><%= booking.caravan.model %> from <%= booking.user.username.capitalize %></h5>
+      <h6>From: <%= booking.start_date %></h6>
+      <h6>To: <%= booking.end_date %></h6>
+      <h6>Total: $ <%= (booking.caravan.price * (booking.end_date - booking.start_date)).to_i %></h6>
+    </div>
+    <% end %>
+</div>
