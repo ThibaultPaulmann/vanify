@@ -42,6 +42,10 @@ class CaravansController < ApplicationController
     redirect_to caravans_path
   end
 
+  def user_listings
+    @caravans = Caravan.where(user: current_user)
+  end
+
   private
 
   def caravan_params
