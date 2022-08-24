@@ -26,7 +26,7 @@
       <%= f.input :fuelType, prompt: 'Select a Fuel Type', collection: Caravan::FUEL_TYPES %>
     </div>
   </div>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :picture_url %>
     <%= f.input :description, as: :text, input_html: {rows: 3}  %>
     <%= f.submit %>
   <% end %>
