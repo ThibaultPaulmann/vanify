@@ -6,7 +6,7 @@
       <p><%= @caravan.location %></p>
     </div>
     <div>
-      <p>Caravan owner</p>
+      <p><%= @caravan.user.username %></p>
     </div>
   </div>
   <div class="show-images-container">
@@ -19,25 +19,25 @@
   <div class="show-info-container">
     <div class="info-header d-flex justify-content-between">
       <div>
-        <h3>Caravan rented out by "Caravan owner"</h3>
+        <h3>Caravan rented out by <%= @caravan.user.username %></h3>
         <p><i class="fa-solid fa-users-between-lines"></i> <%= @caravan.capacity %></p>
       </div>
       <div>
-        <div style="height: 60px; width: 60px; background-color: darkgrey; border-radius: 50%;"></div>
+        <% if @caravan.user.profilePic.nil? %>
+          <div style="height: 60px; width: 60px; background-color: darkgrey; border-radius: 50%;"></div>
+        <% else %>
+          <img src=<%= @caravan.user.profilePic %> alt="" class="avatar">
+        <% end %>
       </div>
     </div>
     <div class="info-body">
       <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id nunc diam. Nunc venenatis quam in arcu volutpat efficitur. Mauris lorem ipsum, mattis ac lorem quis, faucibus rutrum magna. Duis non turpis ut leo efficitur vestibulum. Pellentesque id maximus libero, a venenatis quam. Praesent ut varius justo, id semper nibh. Cras ac nunc dapibus, pellentesque mauris a, auctor orci.
-          Morbi dignissim tincidunt eros, eu varius sapien auctor vel. Donec nec urna et erat venenatis pulvinar sit amet eget turpis. Pellentesque rutrum porttitor velit, a eleifend felis sagittis vitae. Nulla facilisi. Vivamus quis neque vel ante eleifend posuere sed ac odio. Suspendisse laoreet finibus sapien, quis congue leo consequat et. Aliquam rhoncus nisi vitae pulvinar rutrum. Vivamus lacinia nec ligula ut feugiat. Sed bibendum nulla varius interdum posuere.
+        <p>Year: <%= @caravan.year.nil? ? "N/A" : @caravan.year %> </p>
+        <p>Fuel type: <%= @caravan.fuelType.nil? ? "N/A" : @caravan.fuelType %></p>
+        <p> Description: <%= @caravan.description %><%= @caravan.description %><%= @caravan.description %><%= @caravan.description %><%= @caravan.description %>
         </p>
       </div>
-      <div class="booking-card">
-      </div>
-    </div>
-    <div>
-      <p>Year: <%= @caravan.year.nil? ? "N/A" : @caravan.year %> </p>
-      <p>Fuel type: <%= @caravan.fuelType.nil? ? "N/A" : @caravan.fuelType %></p>
+      <%= render "components/booking_card" %>
     </div>
   </div>
 </div>
