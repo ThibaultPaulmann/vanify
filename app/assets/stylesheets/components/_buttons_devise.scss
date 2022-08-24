@@ -1,0 +1,22 @@
+
+.buttons-devise-logic {
+  display: flex;
+  margin: 10px 0px 10px 0px;
+    a {
+      text-decoration: none;
+      color: $main-buttons-color;
+      font-weight: bold;
+    }
+}
+
+.alternate-buttons {
+  display: flex;
+}
+
+#sign-in-question {
+  margin-right: 10px;
+}
+
+.forgot-password {
+  margin-left: 246px;
+}
