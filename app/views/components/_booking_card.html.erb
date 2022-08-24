@@ -1,8 +1,8 @@
 <div id="booking-card">
-  <h2 class="price">€ <%= @caravan.price %> / day </h2>
+  <h4><span id="price">€ <%= @caravan.price.to_i %></span> / day </h4>
   <%= simple_form_for [@caravan, @booking] do |f| %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
-    <%= f.submit %>
+    <%= f.button :submit, "Book", class: "submit-button" %>
   <% end %>
 </div>

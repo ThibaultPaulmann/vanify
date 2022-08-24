@@ -1,16 +1,32 @@
 #booking-card {
   margin-left: 10px;
-  width: 350px;
+  width: 400px;
   min-width: 350px;
-  height: 400px;
   padding: 20px;
   color: $background-color;
   border: $main-buttons-color;
   background-color: $main-buttons-color;
-  box-shadow: 3px 3px 10px $header-color;
   border-radius: 20px;
 
   h2 {
     color: $background-color;
+  }
+
+  #price {
+    font-size: 34px;
+    font-weight: 500;
+  }
+
+  .submit-button {
+    font-size: 18px;
+    width: 100%;
+    color: $background-color;
+    border: 1px solid $background-color;
+    border-radius: 20px;
+    padding: 10px 15px;
+
+    &:hover {
+      background-color: $paragraph-color;
+    }
   }
 }
