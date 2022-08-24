@@ -1,0 +1,33 @@
+<div class="container" id="simple-form-new">
+<h1 id="header-simple-form">Create a Listing</h1>
+<br>
+  <%= simple_form_for(@caravan) do |f| %>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.input :location %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.input :price %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.input :model %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.input :capacity %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.input :year %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.input :fuelType, prompt: 'Select a Fuel Type', collection: Caravan::FUEL_TYPES %>
+    </div>
+  </div>
+    <%= f.input :picture_url %>
+    <%= f.input :description, as: :text, input_html: {rows: 3}  %>
+    <%= f.submit %>
+  <% end %>
+</div>
