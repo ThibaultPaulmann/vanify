@@ -3,16 +3,18 @@
     <h1>Current listing:</h1>
     <%= link_to "Add a listing", new_caravan_path , class: "btn btn-danger" %>
   </div>
-  <div class="listing">
+  <div class="listings">
     <% @caravans.each do |caravan| %>
-      <div class="box">
-        <% if caravan.photos.attached? %>
-          <%= link_to caravan_path(caravan) do %>
-            <% caravan.photos.each do |photo| %>
-              <div class="photo-img" style="background-image: url('<%= cl_image_path photo.key, crop: :fill %>')"></div>
+      <div class="listing">
+        <div class="image-container">
+          <% if caravan.photos.attached? %>
+            <%= link_to caravan_path(caravan) do %>
+              <% caravan.photos.each do |photo| %>
+                <div class="photo-img" style="background-image: url('<%= cl_image_path photo.key, crop: :fill %>')"></div>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
+        </div>
         <div class="description">
           <div class="naming">
             <h4><%= link_to caravan.model, caravan_path(caravan), class: "a" %></h4>
