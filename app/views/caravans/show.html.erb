@@ -1,6 +1,5 @@
-<%= link_to (@caravan.picture_url&.attached?)  ?  "Change picture" : "Add picture", edit_caravan_path(@caravan), class: "btn btn-primary" %>
-
 <div class="caravans-show">
+  <div class="add-photo-btn"><%= link_to (@caravan.picture_url&.attached?)  ?  "Change picture" : "Add picture", edit_caravan_path(@caravan), class: "btn btn-primary" %></div>
   <h1><%= @caravan.model %></h1>
   <div class="d-flex justify-content-between">
     <div>
@@ -11,6 +10,11 @@
     </div>
   </div>
   <div class="show-images-container">
+    <%# <% @caravans.each do |caravan| %>
+      <%# <% caravan.photos.each do |photo| %>
+        <%# <div class="photo-img" style="background-image: url('<%= cl_image_path photo.key, crop: :fill %>')"></#div> %>
+      <%# <% end %>
+    <%# <% end %>
   </div>
   <div class="show-info-container">
     <div class="info-header d-flex justify-content-between">
