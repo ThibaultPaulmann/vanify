@@ -7,6 +7,9 @@ class CaravansController < ApplicationController
 
   def show
     @caravan = Caravan.find(params[:id])
+    @booking = Booking.new
+    @booking.user = current_user
+    @booking.caravan = @caravan
   end
 
   def new
