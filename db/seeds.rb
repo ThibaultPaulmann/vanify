@@ -17,6 +17,7 @@ emails.each do |email|
 end
 
 5.times do
+  file = URI.open("https://res.cloudinary.com/dwbqvkxb8/image/upload/v1661265935/development/e9k66pfrvwzfaqm3q9fzykukaxws.jpg")
   caravan = Caravan.new
   caravan.user = User.all.sample
   caravan.model = Faker::Vehicle.manufacture
@@ -26,6 +27,7 @@ end
   caravan.fuelType = Caravan::FUEL_TYPES.sample
   caravan.year = rand(1980..2022)
   caravan.description = Faker::Lorem.paragraph
+  caravan.photos.attach(io: file, filename: "defaultCaravan.jpg", content_type: "image/jpg")
   p caravan.save
 end
 
