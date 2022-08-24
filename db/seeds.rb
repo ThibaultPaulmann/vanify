@@ -1,3 +1,4 @@
+require "open-uri"
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -17,7 +18,7 @@ emails.each do |email|
 end
 
 5.times do
-  file = URI.open("https://res.cloudinary.com/dwbqvkxb8/image/upload/v1661265935/development/e9k66pfrvwzfaqm3q9fzykukaxws.jpg")
+  file = URI.open("https://res.cloudinary.com/dwbqvkxb8/image/upload/v1661348915/production/skoda-1203-camper-rendering_sz2apa.jpg")
   caravan = Caravan.new
   caravan.user = User.all.sample
   caravan.model = Faker::Vehicle.manufacture
