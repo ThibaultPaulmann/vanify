@@ -16,10 +16,11 @@
   }
 
   .show-images-container-bookings {
-    width: 100%;
-    height: 500px;
+    width: 40%;
+    height: 200px;
     background-color: grey;
     border-radius: 15px;
+    margin-top: 20px;
   }
 
   .photo-img-booking {
@@ -28,7 +29,7 @@
   }
 
   .show-info-container-bookings {
-    margin: 40px 0;
+
   }
 
   .info-header-bookings {
@@ -44,6 +45,11 @@
     justify-content: space-between;
   }
 }
+
+.container-image-text {
+  display: flex;
+}
+
 
 
 .btn-primary,
