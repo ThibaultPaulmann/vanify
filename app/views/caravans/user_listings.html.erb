@@ -4,25 +4,9 @@
     <h2>You have no caravans listed</h2>
   <% else %>
     <% @caravans.each do |caravan| %>
-      <div class="box">
-        <% if caravan.photos.attached? %>
-          <%= link_to caravan_path(caravan) do %>
-            <% caravan.photos.each do |photo| %>
-              <div class="photo-img" style="background-image: url('<%= cl_image_path photo.key, crop: :fill %>')"></div>
-            <% end %>
-          <% end %>
-        <% end %>
-        <%# <img src=<%= caravan.picture_url %>
-        <div class="description">
-          <div class="naming">
-            <h4><%= link_to caravan.model, caravan_path(caravan), class: "a" %></h4>
-            <p><%= caravan.location %></p>
-          </div>
-          <div class="right">
-            <h5>€ <%= caravan.price.to_i %></h5>
-            <p><i class="fa-solid fa-user"></i> <%= caravan.capacity %></p>
-          </div>
-        </div>
+      <div class="user-listing">
+        <div class="image-container"></div>
+        <div class="content"></div>
       </div>
     <% end %>
   <% end %>
