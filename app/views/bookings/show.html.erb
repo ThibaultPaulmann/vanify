@@ -1,5 +1,8 @@
 <div class="bookings-show">
+  <div class="model-date">
   <h1><%= @booking.caravan.model %></h1>
+  <h1><%= @booking.start_date.strftime("%A, %b %d") %> - <%= @booking.end_date.strftime("%A, %b %d") %></h1>
+  </div>
   <div class="d-flex justify-content-between">
     <div>
       <p><%= @booking.caravan.location %></p>

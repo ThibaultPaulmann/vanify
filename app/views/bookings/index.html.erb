@@ -14,7 +14,7 @@
             <%= link_to booking_path(booking), {:style=>'text-decoration:none; color: black;'} do %>
               <h3> <%= booking.caravan.model%> from <%= booking.user.username.capitalize %></h3>
             <% end %>
-            <h6><%= booking.caravan.location %></h6>
+            <h6><i class="fa-solid fa-location-dot"></i> <%= booking.caravan.location %></h6>
             <h5>From: <%= booking.start_date.strftime("%A, %b %d") %></h5>
             <h5>To: <%= booking.end_date.strftime("%A, %b %d") %></h5>
             <h5>$ <%= (booking.caravan.price).to_i %> × <%= (booking.end_date - booking.start_date).to_i %> <%= (booking.end_date - booking.start_date).to_i > 1 ? "nights" : "night"  %> </h5>

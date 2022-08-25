@@ -46,7 +46,7 @@ class CaravansController < ApplicationController
   def update
     @caravan = Caravan.find(params[:id])
     @caravan.update(caravan_params)
-    redirect_to caravans_path
+    redirect_to caravan_path
   end
 
   def destroy

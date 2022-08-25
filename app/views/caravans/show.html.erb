@@ -1,11 +1,14 @@
 <div class="caravans-show">
-  <h1><%= @caravan.model %></h1>
+  <div class="head">
+    <h1><%= @caravan.model %></h1>
+    <div class="btn edit-btn"><%= link_to "Edit listing", edit_caravan_path, class: "edit" %></div>
+  </div>
   <div class="d-flex justify-content-between">
     <div>
-      <p><%= @caravan.location %></p>
+      <p><i class="fa-solid fa-location-dot"></i> <%= @caravan.location %></p>
     </div>
     <div>
-      <p><%= @caravan.user.username %></p>
+      <p><i class="fa-solid fa-van-shuttle"></i> <%= @caravan.user.username %></p>
     </div>
   </div>
   <div class="show-images-container">
