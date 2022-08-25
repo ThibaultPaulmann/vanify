@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: current_user)
   end
 
-
   def create
     @booking = Booking.new(booking_params)
     @booking.caravan = Caravan.find(params[:caravan_id])
