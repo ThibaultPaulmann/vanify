@@ -1,5 +1,5 @@
 <div class="booking-container">
-  <h1>Your bookings:</h1>
+  <h1>My bookings:</h1>
   <div class="bookings">
     <% @bookings.each do |booking| %>
       <div class="booking-box">
@@ -18,7 +18,7 @@
             <h5>From: <%= booking.start_date.strftime("%A, %b %d") %></h5>
             <h5>To: <%= booking.end_date.strftime("%A, %b %d") %></h5>
             <h5>$ <%= (booking.caravan.price).to_i %> × <%= (booking.end_date - booking.start_date).to_i %> <%= (booking.end_date - booking.start_date).to_i > 1 ? "nights" : "night"  %> </h5>
-            <h5>Total: $ <%= (booking.caravan.price * (booking.end_date - booking.start_date)).to_i %></h5>
+            <h5 id="total-price">Total: $ <%= (booking.caravan.price * (booking.end_date - booking.start_date)).to_i %></h5>
             <h6>Cancellation policy: <a class="cancel" href="#">Moderate</a></h6>
           </div>
         </div>
