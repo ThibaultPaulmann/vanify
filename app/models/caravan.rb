@@ -1,8 +1,9 @@
 class Caravan < ApplicationRecord
   FUEL_TYPES = ["diesel", "petrol", "electricity"]
 
-  belongs_to :user, dependent: :destroy
-  has_many_attached :photos
+  belongs_to :user
+  has_many :bookings, dependent: :destroy
+  has_many_attached :photos, dependent: :destroy
 
   validates :model, presence: true, length: { minimum: 3 }
   validates :capacity, presence: true, numericality: { only_integer: true, greater_than: 0 }
