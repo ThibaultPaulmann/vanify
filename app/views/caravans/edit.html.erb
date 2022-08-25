@@ -1,4 +1,11 @@
 <%= link_to "Back", caravan_path, class: "btn btn-primary back-btn" %>
+
+<%= f.input :location,
+  input_html: {data: {location_autocomplete_target: "location"}},
+  wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+%>
+
+
 <%= simple_form_for(@caravan) do |f| %>
   <%= f.submit "Submit picture", class: "btn btn-primary" %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>

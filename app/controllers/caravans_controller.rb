@@ -2,10 +2,19 @@ class CaravansController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @caravans = Caravan.all
     if params[:query].present?
       @caravans = Caravan.search_by_model_and_location(params[:query])
     else
       @caravans = Caravan.all
+    end
+    @markers = @caravans.map do |caravan|
+      {
+        lat: caravan.latitude,
+        lng: caravan.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {caravan: caravan}),
+        image_url: helpers.asset_url("logo.png")
+      }
     end
   end
 

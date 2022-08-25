@@ -1,0 +1,27 @@
+.book-btn {
+  border: 1px solid black;
+  width: 115px;
+  border-radius: 10px;
+  background-color: black;
+  padding: 9px;
+  margin: 0 auto;
+  text-decoration: none;
+  color: white;
+  font-weight: bolder;
+}
+
+.book-btn:hover {
+    color: rgb(191, 189, 189) !important;
+}
+.book {
+  display: flex;
+  justify-content: center;
+}
+
+h4 {
+  font-weight: bolder;
+}
+
+.last-h6 {
+  margin-bottom: 20px;
+}
