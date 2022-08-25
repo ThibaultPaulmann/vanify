@@ -6,7 +6,7 @@
 
 .bookings-show {
   width: 1120px;
-  padding: 20px 80px;
+  padding: 20px 60px;
   margin: 0 auto 30px auto;
   border: 0.2px solid $main-buttons-color;
   border-radius: 20px;
@@ -28,6 +28,7 @@
   }
 
   .show-images-container-bookings {
+    max-width: 550px;
     width: 213%;
     height: 321px;
     background-color: transparent;
@@ -55,7 +56,6 @@
   justify-content: space-between;
   align-items: center;
 }
-
 
 .btn-primary,
 .btn-primary:hover,

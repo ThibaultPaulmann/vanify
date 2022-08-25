@@ -1,47 +1,46 @@
 <div class="bookings-show">
   <div class="model-date">
-  <h1><%= @booking.caravan.model %></h1>
-  <h1><%= @booking.start_date.strftime("%A, %b %d") %> - <%= @booking.end_date.strftime("%A, %b %d") %></h1>
+    <h1><%= @booking.caravan.model %></h1>
+    <h1><%= @booking.start_date.strftime("%A, %b %d") %> - <%= @booking.end_date.strftime("%A, %b %d") %></h1>
   </div>
   <div class="d-flex justify-content-between">
     <div>
-      <p><%= @booking.caravan.location %></p>
+      <p>Location: <%= @booking.caravan.location %></p>
     </div>
     <div>
       <p>Year: <%= @booking.caravan.year.nil? ? "N/A" : @booking.caravan.year %> </p>
     </div>
     <div>
-      <p>Fuel type: <%= @booking.caravan.fuelType.nil? ? "N/A" : @booking.caravan.fuelType %></p>
+      <p>Fuel type: <%= @booking.caravan.fuelType.nil? ? "N/A" : @booking.caravan.fuelType.capitalize %></p>
     </div>
     <div>
-      <p><i class="fa-solid fa-users-between-lines"></i> <%= @booking.caravan.capacity %></p>
+      <p><i class="fa-solid fa-user"></i> <%= @booking.caravan.capacity %></p>
     </div>
     <div>
-      <p><%= @booking.user.username  %></p>
+      <p>Owner: <%= @booking.user.username  %></p>
     </div>
   </div>
-
-
   <div class="container-image-text">
-        <div class="show-images-container-bookings">
-          <% if @booking.caravan.photos.attached? %>
-            <% @booking.caravan.photos.each do |photo| %>
-            <div class="photo-img-booking" style="background-image: url('<%= cl_image_path photo.key, width: 560, height: 320, gravity: "center", crop: :fill%>')">
-            </div>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="description-icon">
-          <div>
-            <p><%= @booking.caravan.description %><%= @booking.caravan.description %><%= @booking.caravan.description %>
+    <div class="show-images-container-bookings">
+      <% if @booking.caravan.photos.attached? %>
+        <% @booking.caravan.photos.each do |photo| %>
+          <div class="photo-img-booking" style="background-image: url('<%= cl_image_path photo.key, width: 560, height: 320, gravity: "center", crop: :fill%>')">
           </div>
-          <div  style="">
-            <% if @booking.caravan.user.profilePic.nil? %>
-              <%= render "components/avatar_user" %></div>
-            <% else %>
-              <p><%= @booking.caravan.user.username %></p> <img <%= render "components/avatar_user" %> src=<%= @booking.caravan.user.profilePic %> alt="" class="avatar">
-            <% end %>
-          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="description-icon">
+      <div>
+        <p><%= @booking.caravan.description %>
         </div>
+        <div  style="">
+          <% if @booking.caravan.user.profilePic.nil? %>
+            <%= render "components/avatar_user" %></div>
+        <% else %>
+          <p><%= @booking.caravan.user.username %></p>
+          <img <%= render "components/avatar_user" %> src=<%= @booking.caravan.user.profilePic %> alt="" class="avatar">
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,25 +1,29 @@
 <div class="caravans-user-listings">
-  <h1>User listings</h1>
+  <h1>My listings</h1>
   <% if @caravans.empty? %>
     <h2>You have no caravans listed</h2>
   <% else %>
     <% @caravans.each do |caravan| %>
       <div class="user-listing">
         <div class="image-container">
-          <% if caravan.photos.attached? %>
-            <div class="photo-img" style="background-image: url('<%= cl_image_path caravan.photos.first.key, crop: :fill%>')"></div>
+          <%= link_to caravan_path(caravan), class: "img-container" do %>
+            <% if caravan.photos.attached? %>
+              <div class="photo-img" style="background-image: url('<%= cl_image_path caravan.photos.first.key, crop: :fill%>')"></div>
+            <% end %>
           <% end %>
         </div>
         <div class="content">
           <div>
             <div class="d-flex justify-content-between">
-              <h2><%= caravan.model %></h2>
+              <%= link_to caravan_path(caravan), class: "header-link" do %>
+                <h2><%= caravan.model %></h2>
+              <% end %>
               <h4><span id="price">€ <%= caravan.price.to_i %></span> / day </h4>
             </div>
             <div>
               <h5><i class="fa-solid fa-location-dot"></i>  <%= caravan.location %></h5>
               <h5><i class="fa-solid fa-user"></i> <%= caravan.capacity %> people</h5>
-              <h5><i class="fa-solid fa-gas-pump"></i> <%= caravan.fuelType %></h5>
+              <h5><i class="fa-solid fa-gas-pump"></i> <%= caravan.fuelType.capitalize %></h5>
               <h5><i class="fa-solid fa-clock"></i> <%= caravan.year %></h5>
             </div>
           </div>

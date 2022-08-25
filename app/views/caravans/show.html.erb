@@ -35,7 +35,7 @@
     <div class="info-body">
       <div>
         <p>Year: <%= @caravan.year.nil? ? "N/A" : @caravan.year %> </p>
-        <p>Fuel type: <%= @caravan.fuelType.nil? ? "N/A" : @caravan.fuelType %></p>
+        <p>Fuel type: <%= @caravan.fuelType.nil? ? "N/A" : @caravan.fuelType.capitalize %></p>
         <p> Description: <%= @caravan.description %></p>
       </div>
       <div data-controller="booking-card">
