@@ -1,12 +1,45 @@
+<div class="container" id="simple-form-new">
 <%= link_to "Back", caravan_path, class: "btn btn-primary back-btn" %>
+<h1 id="header-simple-form">Create a Listing</h1>
+<%# <%= simple_form_for(@caravan) do |f| %>
+  <%# <%= f.submit "Submit picture", class: "btn btn-primary" %>
+  <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%# <%= f.input :location, %>
+  <%# input_html: {data: {location_autocomplete_target: "location"}}, %>
+  <%# wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
+<%# <% end %>
 
-<%= f.input :location,
-  input_html: {data: {location_autocomplete_target: "location"}},
-  wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
-%>
 
 
-<%= simple_form_for(@caravan) do |f| %>
-  <%= f.submit "Submit picture", class: "btn btn-primary" %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-<% end %>
+ <%= simple_form_for(@caravan) do |f| %>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.input :model %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.input :price %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.input :location,
+        input_html: {data: {location_autocomplete_target: "location"}},
+        wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.input :capacity %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.input :year %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.input :fuelType, prompt: 'Select a Fuel Type', collection: Caravan::FUEL_TYPES %>
+    </div>
+  </div>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :description, as: :text, input_html: {rows: 3}  %>
+    <%= f.submit %>
+  <% end %>
+</div>
