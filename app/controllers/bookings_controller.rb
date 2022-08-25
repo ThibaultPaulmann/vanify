@@ -10,11 +10,14 @@ class BookingsController < ApplicationController
     @booking.caravan = Caravan.find(params[:caravan_id])
     @booking.user = current_user
     if @booking.save
-      redirect_to caravans_path
+      redirect_to booking_path(@booking)
     else
-      raise
       render 'caravans/show', status: :unprocessable_entity
     end
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   private
