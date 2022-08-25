@@ -15,7 +15,7 @@ function initFlatPickr() {
       minDate: "today",
       disable: unavailableDates,
       dateFormat: "Y-m-d",
-      mode: "range",
+      mode: "single",
     });
 
     console.log("im in the file");

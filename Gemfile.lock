@@ -126,6 +126,7 @@ GEM
     erubi (1.11.0)
     execjs (2.8.1)
     ffi (1.15.5)
+    flatpickr (4.6.11.0)
     font-awesome-sass (6.1.2)
       sassc (~> 2.0)
     globalid (1.0.0)
@@ -299,6 +300,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker!
+  flatpickr
   font-awesome-sass (~> 6.1)
   jbuilder
   jsbundling-rails
