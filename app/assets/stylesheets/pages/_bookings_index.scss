@@ -6,17 +6,24 @@
   display: flex;
   align-items: center;
   margin: 20px;
-  border: 1px solid black;
+  border: 1.3px solid #f3f3f1;
   height: 300px;
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
   h6 {
     font-weight: 100;
   }
 }
 
-.content {
+.content-box {
   margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.content {
+  width: 500px;
 }
 
 .img-of-caravan {
@@ -24,4 +31,13 @@
   height: 100%;
   background-size: cover;
   // border-radius: 12px;
+}
+
+.cancel {
+  text-decoration: none;
+  color: #334c5b;
+}
+
+.cancel:hover {
+  color: black;
 }
