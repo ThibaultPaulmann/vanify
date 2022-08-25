@@ -1,0 +1,10 @@
+<div class="container" id="searchbar-container">
+  <%= form_with url: caravans_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a caravan"%>
+    <button style="background-color: #f3dabe; border: 0px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+  <% end %>
+</div>

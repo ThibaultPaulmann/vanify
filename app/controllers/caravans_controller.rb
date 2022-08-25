@@ -3,6 +3,11 @@ class CaravansController < ApplicationController
 
   def index
     @caravans = Caravan.all
+    if params[:query].present?
+      @caravans = Caravan.search_by_model_and_location(params[:query])
+    else
+      @caravans = Caravan.all
+    end
     @markers = @caravans.map do |caravan|
       {
         lat: caravan.latitude,

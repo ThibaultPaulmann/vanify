@@ -1,8 +1,8 @@
-<div id="booking-card">
+<div id="booking-card" data-unavailable="<%= @caravan.unavailable_dates.to_json %>" data-action="click->booking_card#click">
   <h4><span id="price">€ <%= @caravan.price.to_i %></span> / day </h4>
   <%= simple_form_for [@caravan, @booking] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
+    <%= f.input :start_date, as: :string, type: :text %>
+    <%= f.input :end_date, as: :string, type: :text %>
     <%= f.button :submit, "Book", class: "submit-button" %>
   <% end %>
 </div>
