@@ -1,4 +1,7 @@
 // Entry point for the build script in your package.json
-import "@hotwired/turbo-rails"
-import "./controllers"
-import "bootstrap"
+import "@hotwired/turbo-rails";
+import "./controllers";
+import "bootstrap";
+import flatpickr from "flatpickr";
+
+import { initFlatPickr } from "./plugins/init_flatpickr";
