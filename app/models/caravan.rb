@@ -16,4 +16,15 @@ class Caravan < ApplicationRecord
       { from: range[0], to: range[1] }
     end
   end
+  
+  include PgSearch::Model
+
+  pg_search_scope :search_by_model_and_location,
+    against: [ :model, :location ],
+    associated_against: {
+    user: [ :username, :email ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 end

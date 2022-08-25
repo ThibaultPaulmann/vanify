@@ -2,7 +2,11 @@ class CaravansController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @caravans = Caravan.all
+    if params[:query].present?
+      @caravans = Caravan.search_by_model_and_location(params[:query])
+    else
+      @caravans = Caravan.all
+    end
   end
 
   def show
