@@ -4,6 +4,14 @@
   padding: 20px 80px 80px 80px;
   margin: 0 auto 30px auto;
 
+  .create-button {
+    color: $main-buttons-color;
+
+    &:hover {
+      color: $paragraph-color;
+    }
+  }
+
   .user-listing {
     display: flex;
     height: 300px;

@@ -1,5 +1,8 @@
 <div class="caravans-user-listings">
-  <h1>My listings</h1>
+  <div class="d-flex justify-content-between">
+    <h1>My listings</h1>
+    <h1><%= link_to new_caravan_path, class: "create-button" do %><i class="fa-solid fa-circle-plus"></i> <% end %></h1>
+  </div>
   <% if @caravans.empty? %>
     <h2>You have no caravans listed</h2>
   <% else %>
