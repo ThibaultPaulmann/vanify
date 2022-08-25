@@ -8,6 +8,8 @@
   margin: 20px;
   border: 1px solid black;
   height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
   h6 {
     font-weight: 100;
   }
@@ -15,4 +17,11 @@
 
 .content {
   margin: 20px;
+}
+
+.img-of-caravan {
+  width: 430px;
+  height: 100%;
+  background-size: cover;
+  // border-radius: 12px;
 }

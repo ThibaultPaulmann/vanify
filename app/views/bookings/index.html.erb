@@ -4,17 +4,20 @@
   <div class="bookings">
     <% @bookings.each do |booking| %>
       <div class="booking-box">
-        <div class="content">
-          <h5><%= booking.caravan.model %> from <%= booking.user.username.capitalize %></h5>
-          <h6>From: <%= booking.start_date.strftime("%A, %b %d") %></h6>
-          <h6>To: <%= booking.end_date.strftime("%A, %b %d") %></h6>
-          <h6>Total: $ <%= (booking.caravan.price * (booking.end_date - booking.start_date)).to_i %></h6>
-        </div>
-      </div>
-    <% end %>
-  <div class="caravan_img">
 
-  </div>
+        <% booking.caravan.photos.each do |photo| %>
+          <div class="img-of-caravan" style="background-image: url('<%= cl_image_path photo.key, crop: :fill%>')"></div>
+        <% end %>
+
+      <div class="content">
+        <h5><%= booking.caravan.model %> from <%= booking.user.username.capitalize %></h5>
+        <h6>From: <%= booking.start_date.strftime("%A, %b %d") %></h6>
+        <h6>To: <%= booking.end_date.strftime("%A, %b %d") %></h6>
+        <hr>
+        <h6>Total: $ <%= (booking.caravan.price * (booking.end_date - booking.start_date)).to_i %></h6>
+      </div>
+    </div>
+    <% end %>
 
   </div>
 
