@@ -1,0 +1,9 @@
+
+<%= form_with url: caravans_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a caravan"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>

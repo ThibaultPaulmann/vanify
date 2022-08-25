@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: current_user)
   end
 
-
   def create
     @booking = Booking.new(booking_params)
     @booking.caravan = Caravan.find(params[:caravan_id])
@@ -12,7 +11,6 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to caravans_path
     else
-      raise
       render 'caravans/show', status: :unprocessable_entity
     end
   end
