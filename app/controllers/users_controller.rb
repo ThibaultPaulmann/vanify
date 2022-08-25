@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.photo.attach(params[:avatar])
+    @user.photo.attach(params[:photo])
     if @user.update(user_params)
       flash[:notice] = "Your account information was succesfully updated"
       redirect_to user_path
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.photo.attach(params[:avatar])
+    @user.photo.attach(params[:photo])
     if @user.save
         flash[:notice] = "Welcome to Edx Wallet"
         redirect_to user_path(@user)
