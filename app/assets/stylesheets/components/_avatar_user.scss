@@ -2,11 +2,9 @@
   border: solid 1px;
   border-radius: 60px;
   padding: 10px;
-  padding-bottom: 5px;
   width: 300px;
   height: 100px;
   }
-
 
   #avatar-margin {
     margin-right: 10px;
@@ -15,7 +13,6 @@
   #username-right {
   position: relative;
   left: 70px;
-  margin-bottom: 0px;
   }
 
   .icons-group-avatar {
@@ -25,6 +22,7 @@
   position: relative;
   right: 22px;
   bottom: 24px;
+  margin-left: 24px;
 
   a {
     margin-left: 60px;
