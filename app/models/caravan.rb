@@ -4,6 +4,8 @@ class Caravan < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many_attached :photos, dependent: :destroy
+  geocoded_by :location
+  after_validation :geocode
 
   validates :model, presence: true, length: { minimum: 3 }
   validates :capacity, presence: true, numericality: { only_integer: true, greater_than: 0 }

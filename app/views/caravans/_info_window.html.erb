@@ -1,0 +1,4 @@
+<h4><%= caravan.model %></h4>
+<h5>from <%= caravan.user.username.capitalize %></h5>
+<h6>Capacity: <%= caravan.capacity%> <%= caravan.capacity > 1 ? "people" : "person" %></h6>
+<h6>Price: $<%= caravan.price.to_i %> per day</h6>

@@ -7,6 +7,7 @@ require "open-uri"
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 emails = ["filip@gmail.com", "tibo@gmail.com", "mike@gmail.com", "123@gmail.com" , "1234@gmail.com"]
+cities = ["Berlin", "Hamburg", "Cologne", "Munich", "Frankfurt", "London", "Manchester", "York", "Brighton", "Oxford", "Liverpool", "Birmingham", "Roma", "Milano", "Turino", "Paris", "Marseille", "Lyon", "Nice", "Amsterdam", "Brussel", "Prague" ,"Budapest", "Stockholm", "Oslo", "Reykjavik", "Vienna", "Zurich", "Geneva", "Barcelona", "Madrid", "Malaga", "Ibiza", "Monaco", "Valencia", "Firenze", "Naples", "Lisbon", "Zadar", "Split", "Lago di Garda"]
 
 puts "rails db:reset db:migrate"
 emails.each do |email|
@@ -23,7 +24,7 @@ end
   caravan.user = User.all.sample
   caravan.model = Faker::Vehicle.manufacture
   caravan.capacity = rand(1..5)
-  caravan.location = Faker::Address.city
+  caravan.location = cities.sample
   caravan.price = Faker::Number.number(digits: 3)
   caravan.fuelType = Caravan::FUEL_TYPES.sample
   caravan.year = rand(1980..2022)

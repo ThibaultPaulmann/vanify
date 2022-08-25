@@ -3,6 +3,14 @@ class CaravansController < ApplicationController
 
   def index
     @caravans = Caravan.all
+    @markers = @caravans.map do |caravan|
+      {
+        lat: caravan.latitude,
+        lng: caravan.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {caravan: caravan}),
+        image_url: helpers.asset_url("logo.png")
+      }
+    end
   end
 
   def show
