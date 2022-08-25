@@ -32,13 +32,13 @@
           <div>
             <p><%= @booking.caravan.description %><%= @booking.caravan.description %><%= @booking.caravan.description %>
           </div>
-            <div  style="position: relative; bottom: 0;left: 46px;">
-              <% if @booking.caravan.user.profilePic.nil? %>
-                <%= render "components/avatar_user" %></div>
-              <% else %>
-                <p><%= @booking.caravan.user.username %></p> <img <%= render "components/avatar_user" %> src=<%= @booking.caravan.user.profilePic %> alt="" class="avatar">
-              <% end %>
-            </div>
+          <div  style="">
+            <% if @booking.caravan.user.profilePic.nil? %>
+              <%= render "components/avatar_user" %></div>
+            <% else %>
+              <p><%= @booking.caravan.user.username %></p> <img <%= render "components/avatar_user" %> src=<%= @booking.caravan.user.profilePic %> alt="" class="avatar">
+            <% end %>
+          </div>
         </div>
   </div>
 </div>

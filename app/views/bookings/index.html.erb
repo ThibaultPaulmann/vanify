@@ -1,29 +1,31 @@
+
 <div class="booking-container">
   <h1>Your bookings:</h1>
-
   <div class="bookings">
     <% @bookings.each do |booking| %>
       <div class="booking-box">
 
         <% booking.caravan.photos.each do |photo| %>
-          <div class="img-of-caravan" style="background-image: url('<%= cl_image_path photo.key, crop: :fill%>')"></div>
+         <div class="img-of-caravan" style="background-image: url('<%= cl_image_path photo.key, crop: :fill%>')">
+          </div>
         <% end %>
 
-      <div class="content-box">
-        <div class="content">
-          <h3><%= booking.caravan.model %> from <%= booking.user.username.capitalize %></h3>
-          <h6><%= booking.caravan.location %></h6>
-          <h5>From: <%= booking.start_date.strftime("%A, %b %d") %></h5>
-          <h5>To: <%= booking.end_date.strftime("%A, %b %d") %></h5>
-          <h5>$ <%= (booking.caravan.price).to_i %> × <%= (booking.end_date - booking.start_date).to_i %> <%= (booking.end_date - booking.start_date).to_i > 1 ? "nights" : "night"  %> </h5>
-          <hr>
-          <h5>Total: $ <%= (booking.caravan.price * (booking.end_date - booking.start_date)).to_i %></h5>
-          <h6>Cancellation policy: <a class="cancel" href="#">Moderate</a></h6>
+        <div class="content-box">
+          <div class="content">
+          <%= link_to booking_path(booking), {:style=>'text-decoration:none; color: black;'} do %>
+            <h3> <%= booking.caravan.model%> from <%= booking.user.username.capitalize %></h3>
+            <h6><%= booking.caravan.location %></h6>
+            <h5>From: <%= booking.start_date.strftime("%A, %b %d") %></h5>
+            <h5>To: <%= booking.end_date.strftime("%A, %b %d") %></h5>
+            <h5>$ <%= (booking.caravan.price).to_i %> × <%= (booking.end_date - booking.start_date).to_i %> <%= (booking.end_date - booking.start_date).to_i > 1 ? "nights" : "night"  %> </h5>
+            <hr>
+            <h5>Total: $ <%= (booking.caravan.price * (booking.end_date - booking.start_date)).to_i %></h5>
+            <h6>Cancellation policy: <a class="cancel" href="#">Moderate</a></h6>
+          <% end %>
+          </div>
         </div>
       </div>
-    </div>
     <% end %>
 
   </div>
-
 </div>
