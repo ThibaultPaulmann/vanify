@@ -1,6 +1,6 @@
 <div class="caravans-show">
-  <div class="add-photo-btn"><%= link_to (@caravan.picture_url&.empty?)  ?  "Add picture" : "Change picture", edit_caravan_path(@caravan), class: "btn btn-primary" %>
-  </div>
+  <%# <div class="add-photo-btn"><%= link_to (@caravan.picture_url&.empty?)  ?  "Add picture" : "Change picture", edit_caravan_path(@caravan), class: "btn btn-primary" %>
+  <%# </div> %>
   <h1><%= @caravan.model %></h1>
   <div class="d-flex justify-content-between">
     <div>
@@ -10,20 +10,18 @@
       <p><%= @caravan.user.username %></p>
     </div>
   </div>
-
   <div class="show-images-container">
     <% if @caravan.photos.attached? %>
       <% @caravan.photos.each do |photo| %>
-      <div class="photo-img" style="background-image: url('<%= cl_image_path photo.key, crop: :fill%>')"></div>
+        <div class="photo-img" style="background-image: url('<%= cl_image_path photo.key, crop: :fill%>')"></div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
-
+  </div>
   <div class="show-info-container">
     <div class="info-header d-flex justify-content-between">
       <div>
         <h3>Caravan rented out by <%= @caravan.user.username %></h3>
-        <p><i class="fa-solid fa-users-between-lines"></i> <%= @caravan.capacity %></p>
+        <p><i class="fa-solid fa-user"></i> <%= @caravan.capacity %></p>
       </div>
       <div>
         <% if @caravan.user.profilePic.nil? %>
@@ -37,8 +35,7 @@
       <div>
         <p>Year: <%= @caravan.year.nil? ? "N/A" : @caravan.year %> </p>
         <p>Fuel type: <%= @caravan.fuelType.nil? ? "N/A" : @caravan.fuelType %></p>
-        <p> Description: <%= @caravan.description %><%= @caravan.description %><%= @caravan.description %><%= @caravan.description %><%= @caravan.description %>
-        </p>
+        <p> Description: <%= @caravan.description %></p>
       </div>
       <%= render "components/booking_card" %>
     </div>
