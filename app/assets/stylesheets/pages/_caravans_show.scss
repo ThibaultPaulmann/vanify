@@ -58,3 +58,19 @@
   background-color: #f3dabd !important;
   border: 1px solid #f3dabd;
 }
+
+
+.edit-btn {
+  border: 1px solid black !important;
+  height: fit-content;
+}
+
+.edit {
+  text-decoration: none;
+  color: black;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+}
