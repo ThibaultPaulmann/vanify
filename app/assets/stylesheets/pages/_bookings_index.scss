@@ -1,6 +1,6 @@
 .booking-container {
   width: 1120px;
-  padding: 20px 80px;
+  padding: 20px 80px 80px 80px;
   margin: 0 auto 30px auto;
 
   .booking-box {
@@ -11,6 +11,7 @@
     height: 300px;
     border-radius: 20px;
     overflow: hidden;
+    margin-bottom: 20px;
     h6 {
       font-weight: 100;
     }
