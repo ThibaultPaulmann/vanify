@@ -1,7 +1,7 @@
 <div class="container" id="avatar-container">
   <div id="avatar-margin">
     <% if @booking.caravan.user.photo.present? %>
-      <%= cl_image_tag @booking.caravan.user.photo.key, width: 60, height: 60, crop: :fill, gravity: :auto %>
+      <%= cl_image_tag @booking.caravan.user.photo.key, width: 60, height: 60, crop: :fill, gravity: :auto, radius: :max, class: "avatar"%>
     <% else %>
       <%= image_tag "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-Cutout.png", class: "avatar" %>
     <% end %>
