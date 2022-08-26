@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user.photo.attach(params[:photo])
     if @user.update(user_params)
       flash[:notice] = "Your account information was succesfully updated"
-      redirect_to user_path
+      redirect_to caravans_path
     else
       render 'edit'
     end

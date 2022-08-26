@@ -25,10 +25,10 @@
         <p><i class="fa-solid fa-user"></i> <%= @caravan.capacity %></p>
       </div>
       <div>
-        <% if @caravan.user.profilePic.nil? %>
-          <div style="height: 60px; width: 60px; background-color: darkgrey; border-radius: 50%;"></div>
+        <% if @caravan.user.photo.present? %>
+          <%= cl_image_tag @caravan.user.photo.key, class: "avatar" %>
         <% else %>
-          <img src=<%= @caravan.user.profilePic %> alt="" class="avatar">
+          <div style="height: 60px; width: 60px; background-color: darkgrey; border-radius: 50%;"></div>
         <% end %>
       </div>
     </div>
