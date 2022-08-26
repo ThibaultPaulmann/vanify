@@ -33,12 +33,11 @@
       <div>
         <p><%= @booking.caravan.description %>
         </div>
-        <div  style="">
-          <% if @booking.caravan.user.profilePic.nil? %>
-            <%= render "components/avatar_user" %></div>
+        <div style="">
+        <% if @booking.caravan.user.photo.present? %>
+          <%= cl_image_tag @booking.caravan.user.photo.key, class: "avatar" %>
         <% else %>
-          <p><%= @booking.caravan.user.username %></p>
-          <img <%= render "components/avatar_user" %> src=<%= @booking.caravan.user.profilePic %> alt="" class="avatar">
+          <%= render "components/avatar_user" %></div>
         <% end %>
       </div>
     </div>
