@@ -7,7 +7,7 @@
   <div class="form-group">
   <label class="col-sm-4 col-form-label">Avatar:</label>
   <div class="col-sm-8"><%= f.file_field :photo, class: "form-control" %></div>
-  <% if current_user.photo.present? %> Current: <%= current_user.photo.filename.to_s %><% end %>
+  <% if current_user.photo.present? %> <label>Current: <%= current_user.photo.filename.to_s %></label><% end %>
   </div>
   <!--Avatar Upload Field-->
 
