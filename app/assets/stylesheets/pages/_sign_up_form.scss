@@ -4,15 +4,17 @@
   background-color: white;
   border-radius: 10px;
   padding: 20px;
-  border: 1px solid $paragraph-color ;
+  border: 1px solid $paragraph-color;
 }
 
+.form-container {
+  padding-bottom: 80px;
+}
 .form-actions {
   margin: 15px 0px 15px 0px;
 }
 
-
 #btnx {
-background-color: $main-buttons-color;
-color: white;
+  background-color: $main-buttons-color;
+  color: white;
 }
