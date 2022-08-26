@@ -4,7 +4,9 @@
       <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
       <% end %>
-      <h3 id="logo-text">Vanify</h3>
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <h3 id="logo-text">Vanify</h3>
+      <% end %>
     </div>
     <div>
       <%= render "components/searchbar" %>

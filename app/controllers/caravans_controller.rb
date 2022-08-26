@@ -34,8 +34,10 @@ class CaravansController < ApplicationController
     @caravan.user = current_user
     if @caravan.save
       redirect_to caravan_path(@caravan)
+      flash[:notice] = "Your listing has been created!"
     else
       render :new, status: :unprocessable_entity
+      flash[:alert] = "Listing creation unsuccesful"
     end
   end
 
@@ -45,14 +47,20 @@ class CaravansController < ApplicationController
 
   def update
     @caravan = Caravan.find(params[:id])
-    @caravan.update(caravan_params)
-    redirect_to caravan_path
+    if @caravan.update(caravan_params)
+      redirect_to caravan_path(@caravan)
+      flash[:notice] = "Your listing has been changed!"
+    else
+      render :edit, status: :unprocessable_entity
+      flash[:alert] = "Couldn't change your listing"
+    end
   end
 
   def destroy
     @caravan = Caravan.find(params[:id])
     @caravan.destroy
     redirect_to user_listings_path
+    flash[:notice] = "Your listing has been deleted!"
   end
 
   def user_listings
