@@ -5,14 +5,16 @@
     <% else %>
       <%= image_tag "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-Cutout.png", class: "avatar" %>
     <% end %>
-    <h4>
-      <div id="username-right"><%= @booking.caravan.user.username %></div>
-    </h4>
   </div>
-  <div class="icons-group-avatar">
-    <div><a href="#" class="fa-brands fa-whatsapp"></a></div>
-    <div><a href="#" class="fa-solid fa-envelope"></a></div>
-    <div><a href="#" class="fa-brands fa-linkedin"></a></div>
+  <div id="avatar-content">
+    <div id="username-right">
+      <h4><%= @booking.caravan.user.username %></h4>
+    </div>
+    <div class="icons-group-avatar">
+      <div><a href="#" class="fa-brands fa-whatsapp"></a></div>
+      <div><a href="#" class="fa-solid fa-envelope"></a></div>
+      <div><a href="#" class="fa-brands fa-linkedin"></a></div>
+    </div>
   </div>
 </div>
 <%# This will only work for the show page of the booking as you see i did @booking.caravan etc.. %>
