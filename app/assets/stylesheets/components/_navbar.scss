@@ -20,6 +20,9 @@
 }
 .nav-item {
   margin-right: 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #logo-text {
