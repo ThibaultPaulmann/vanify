@@ -28,7 +28,7 @@
         <% if @caravan.user.photo.present? %>
           <%= cl_image_tag @caravan.user.photo.key, class: "avatar" %>
         <% else %>
-          <div style="height: 60px; width: 60px; background-color: darkgrey; border-radius: 50%;"></div>
+          <%= image_tag "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-Cutout.png", style:"height: 60px; width: 60px; background-color: darkgrey; border-radius: 50%;" %>
         <% end %>
       </div>
     </div>
