@@ -2,9 +2,8 @@
   <%= form_with url: caravans_path, method: :get, class: "d-flex" do %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
+      class: "search-form form-control",
       placeholder: "Find a caravan"%>
-    <button style="background-color: #f3dabe; border: 0px;"><i class="fa-solid fa-magnifying-glass"></i></button>
-
+    <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
   <% end %>
 </div>
