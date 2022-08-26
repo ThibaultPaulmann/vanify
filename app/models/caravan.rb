@@ -11,7 +11,7 @@ class Caravan < ApplicationRecord
   validates :capacity, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :location, presence: true
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
-  validates :fuelType, inclusion: { in: FUEL_TYPES }
+  validates :fuelType, presence: true, inclusion: { in: FUEL_TYPES }
 
   def unavailable_dates
     bookings.pluck(:start_date, :end_date).map do |range|

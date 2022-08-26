@@ -8,31 +8,42 @@
 <!--Avatar Upload Field-->
     <div class="form-inputs">
     <label class="col-sm-4 col-form-label">Avatar:</label>
+    <%= f.input :username,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "new-username" } %>
     <div class="col-sm-8"><%= f.file_field :photo, class: "form-control" %></div>
     <% if current_user.photo.present? %> Current: <%= current_user.photo.filename.to_s %><% end %>
     </div>
     <!--Avatar Upload Field-->
-      <%= f.input :username,
-                  hint: "leave it blank if you don't want to change it",
-                  required: false,
-                  input_html: { autocomplete: "new-username" } %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
 
+    <%= f.input :email,
+            hint: "leave it blank if you don't want to change it",
+            required: false,
+            input_html: { autocomplete: "new-username" } %>
+    <%= f.input :password_confirmation,
+                required: false,
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :current_password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", id: "btnx" %>
   </div>
 <% end %>
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<div class="buttons-devise-logic"><p style="margin-right: 10px;">Unhappy?</p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p></div>
 
-<%= link_to "Back", :back %>
+<div class="buttons-devise-logic"><%= link_to "Back", caravans_path %></div>
 
 
 
