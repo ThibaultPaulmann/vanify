@@ -24,7 +24,7 @@
     <div class="show-images-container-bookings">
       <% if @booking.caravan.photos.attached? %>
         <% @booking.caravan.photos.each do |photo| %>
-          <div class="photo-img-booking" style="background-image: url('<%= cl_image_path photo.key, width: 560, height: 320, gravity: "center", crop: :fill%>')">
+          <div class="photo-img-booking" style="background-image: url('<%= cl_image_path photo.key, width: 560, height: 320, gravity: "auto", crop: :fill%>')">
           </div>
         <% end %>
       <% end %>
@@ -33,12 +33,9 @@
       <div>
         <p><%= @booking.caravan.description %>
         </div>
-        <div style="">
-        <% if @booking.caravan.user.photo.present? %>
-          <%= cl_image_tag @booking.caravan.user.photo.key, class: "avatar" %>
-        <% else %>
-          <%= render "components/avatar_user" %></div>
-        <% end %>
+        <div>
+          <%= render "components/avatar_user" %>
+        </div>
       </div>
     </div>
   </div>

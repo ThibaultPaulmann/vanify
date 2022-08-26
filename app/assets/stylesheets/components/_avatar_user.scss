@@ -4,18 +4,23 @@
   padding: 10px;
   width: 300px;
   height: 100px;
-  }
+}
 
-  #avatar-margin {
-    margin-right: 10px;
-  }
+#avatar-margin {
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
+  background-color: darkgrey;
+  margin-top: 9px;
+  border-radius: 50%;
+}
 
-  #username-right {
+#username-right {
   position: relative;
   left: 70px;
-  }
+}
 
-  .icons-group-avatar {
+.icons-group-avatar {
   display: flex;
   justify-content: flex-end;
   margin: 0px;
@@ -34,5 +39,5 @@
       color: $hover-color;
       text-decoration: none;
     }
-   }
   }
+}
