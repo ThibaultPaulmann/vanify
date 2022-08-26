@@ -1,8 +1,36 @@
 #searchbar-container {
   padding: 10px;
   border-radius: 10px;
+  position: relative;
+
+  .search-form {
+    border-radius: 20px;
+    width: 100%;
+    padding: 7px 40px 7px 20px;
+  }
+
+  .search-button {
+    position: absolute;
+    right: 13px;
+    top: 13px;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    border: none;
+    padding: 0;
+    background-color: $main-buttons-color;
+    color: $background-color;
+
+    &:hover {
+      background-color: #819aa1;
+    }
+
+    &:active {
+      background-color: $main-buttons-color;
+    }
+  }
 }
 
-#input{
+#input {
   border-radius: 50%;
 }

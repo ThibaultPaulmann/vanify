@@ -126,6 +126,9 @@ GEM
     erubi (1.11.0)
     execjs (2.8.1)
     ffi (1.15.5)
+    file_validators (3.0.0)
+      activemodel (>= 3.2)
+      mime-types (>= 1.0)
     flatpickr (4.6.11.0)
     font-awesome-sass (6.1.2)
       sassc (~> 2.0)
@@ -301,6 +304,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker!
+  file_validators
   flatpickr
   font-awesome-sass (~> 6.1)
   geocoder
