@@ -13,7 +13,6 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       flash[:notice] = "Your account information was succesfully updated"
       redirect_to caravans_path
-      raise
     else
       render 'edit'
     end
