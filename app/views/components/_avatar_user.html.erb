@@ -2,6 +2,8 @@
   <div id="avatar-margin">
     <% if @booking.caravan.user.photo.present? %>
       <%= cl_image_tag @booking.caravan.user.photo.key, width: 60, height: 60, crop: :fill, gravity: :auto %>
+    <% else %>
+      <%= image_tag "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-Cutout.png", class: "avatar" %>
     <% end %>
     <h4>
       <div id="username-right"><%= @booking.caravan.user.username %></div>
